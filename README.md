@@ -4,26 +4,16 @@ Welcome to the Frontend Challenges Repository! This repository is a collection o
 
 ## Challenges
 
-1. ### Challenge Name 1
-   - **Description:** Brief description of the challenge.
-   - **Mockup:** [Link to Design Mockup](#)
+### Newsletter sign-up form with success message
+   - **Description:** This project is a solution to the "Newsletter Sign-up Form with Success Message" challenge on Frontend Mentor. Frontend Mentor challenges are designed to enhance coding skills by creating realistic projects.
+### Chalenge Link: [newsletter-sign-up-with-success-message-main](#https://chrysidoidea.github.io/Frontend-Mentor/newsletter-sign-up-with-success-message-main/index.html)
     
+### Chalende Design:
    ![Newsletter sign-up form with success message](/assets/images/newsletter-sign-up-with-success-message-main.png)
 
-   - **Specifications:**
-     - List of requirements and functionalities.
-
-   - **Resources:**
-     - Any additional resources or references.
-
-2. ### Challenge Name 2
-   - **Description:** Brief description of the challenge.
-   - **Mockup:** [Link to Design Mockup](#)
-
-   ![Challenge Name 2](/screenshots/challenge2.png)
-
-   - **Specifications:**
-     - List of requirements and functionalities.
-
-   - **Resources:**
-     - Any additional resources or references.
+  **Built with**:
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
