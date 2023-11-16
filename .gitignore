@@ -1,0 +1,8 @@
+.DS_Store
+.prettierignore
+
+# Ignore source map files
+**/*.css.map
+
+# Ignore SCSS source files if needed
+**/*.scss

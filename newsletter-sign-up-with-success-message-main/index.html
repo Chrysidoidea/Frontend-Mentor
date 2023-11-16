@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <!-- overlay page -->
+    <div class="overlay-wrapper">
+      <section class="confirmation-section">
+        <img
+          src=".//assets/images/icon-success.svg"
+          alt="success"
+          class="success-img"
+        />
+        <h2 class="success-title">Thanks for subscribing!</h2>
+        <p class="success-description">
+          A confirmation email has been sent to
+          <span class="email-value"></span>. Please open it
+          and click the button inside to confirm your subscription
+        </p>
+        <button class="btn success-btn">
+          <span class="btn-content">Dismiss message</span>
+        </button>
+      </section>
+    </div>
+    <!-- main content -->
+    <main class="container">
+      <div class="image-container"></div>
+      <div class="form-container">
+        <h2 class="title">Stay updated!</h2>
+        <p class="description">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="description-list">
+          <li class="feature-item">
+            <img src="./assets/images/icon-list.svg" alt="icon-list" />
+            <p>Product discovery and building what matters</p>
+          </li>
+          <li class="feature-item">
+            <img src="./assets/images/icon-list.svg" alt="icon-list" />
+            <p>Measuring to ensure updates are a success</p>
+          </li>
+          <li class="feature-item">
+            <img src="./assets/images/icon-list.svg" alt="icon-list" />
+            <p>And much more!</p>
+          </li>
+        </ul>
+        <form class="form" action="submit">
+          <div class="label-wrapper">
+            <label class="email-label" for="email">Email address</label>
+            <span class="warning">Valid email required</span>
+          </div>
+          <input
+            class="email-input"
+            type="email"
+            id="email"
+            placeholder="email@company.com"
+          />
+          <button class="btn submit-btn" type="submit">
+            <span class="btn-content">Subscribe to monthly newsletter</span>
+          </button>
+        </form>
+      </div>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
