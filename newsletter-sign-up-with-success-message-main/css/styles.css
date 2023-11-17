@@ -6,6 +6,7 @@
   --grey: #c8c8d0;
   --errorMessage: #e18b82;
   --invalidInput: #fce9e6;
+  --buttonBackground: hsl(234, 29%, 20%);
   font-family: "Roboto", sans-serif;
 }
 
@@ -168,7 +169,7 @@ body {
   right: 0;
   display: grid;
   place-content: center;
-  background-color: var(--midnightBlue);
+  background-color: var(--buttonBackground);
   border-radius: 0.5rem;
   color: white;
   font-size: 1rem;
