@@ -10,6 +10,12 @@ const DATA = {
       picture: "assets/images/newsletter-sign-up-with-success-message-main.png",
     },
     {
+      id: "Space tourism multi-page website",
+      name: "Space Tourism",
+      url: "space",
+      picture: "assets/images/space.png",
+    },
+    {
       id: "empty",
       name: "empty",
       url: "create-image-which-represent-this-code-background-dcdcdc-background-image-linear-gradient45d-758775127",
@@ -34,6 +40,13 @@ void (function () {
     const link = document.createElement("a");
     const container = document.createElement("div");
 
+    liElement.addEventListener("mouseenter", () => {
+      liHeader.classList.add("hovered");
+    });
+    liElement.addEventListener("mouseleave", () => {
+      liHeader.classList.remove("hovered");
+    })
+
     container.className = "container";
     container.style.background = `url(${project.picture}) no-repeat`;
     container.style.backgroundSize = "cover";
@@ -51,6 +64,7 @@ void (function () {
     liElement.appendChild(container);
     container.appendChild(liHeader);
     container.appendChild(link);
+
   }
 
   mainWrapper.appendChild(header);
@@ -58,7 +72,10 @@ void (function () {
 
   mainWrapper.className = "wrapper";
   root.appendChild(mainWrapper);
+
+
+
 })();
 
-const liElement = document.querySelectorAll(".front-element");
-const liHeader = document.querySelectorAll(".front-element_header");
+// const liElement = document.querySelectorAll(".front-element");
+// const liHeader = document.querySelectorAll(".front-element_header");
