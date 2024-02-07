@@ -1,69 +1,164 @@
-* {
-  user-select: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  background-color: #1a1f26;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+ul,
+dd {
+  margin-block-end: 0;
+  margin-block-start: 0;
 }
 
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: black;
-  width: 100vw;
+  color: #EEEEEE;
 }
 
-h1 {
-  font-size: 4rem;
+.header {
+  padding: 2rem 0 2rem 0;
   text-align: center;
-  margin: 2rem;
-  color: rgb(183, 183, 183);
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  margin-bottom: clamp(1rem, 2vw, 10rem);
+  font-family: 'Protest Revolution', sans-serif;
+  color: rgba(127, 255, 212, 0.725);
+  background-color: #202833;
+  border-bottom: 1px solid #212915;
+  box-shadow: 0rem -1rem 2rem 2rem rgba(127, 255, 212, 0.167);;
 }
 
-ul {
-  display: grid;
-  grid-template-columns: repeat(3, 33vw);
-  place-content: center;
+.wrapper {
+  background-color: #1a1f26;
+  min-height: 100dvh;
+  padding-bottom: 1rem;
+}
+
+.Ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 8rem;
+  display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(2rem, 5vw, 4rem);
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
 }
-ul > li {
+
+.front-element {
   position: relative;
+  height: clamp(10rem, 30dvh, 28rem);
+  width: clamp(15rem, 49dvw, 30rem);
+  background-color: #454b55;
+  box-shadow: black 0px 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 0.5rem;
 }
-ul > li > span {
+.front-element:hover {
+  box-shadow: rgba(127, 255, 212, 0.377) 0px 8px 19px;
+  background-color: rgba(127, 255, 212, 0.809);
+}
+.front-element:hover .container {
+  border: 2px solid rgba(127, 255, 212, 0.725);
+  box-shadow: rgba(127, 255, 212, 0.107) 0px -23px 25px 0px inset, rgba(127, 255, 212, 0.15) 0px -36px 30px 0px inset, rgba(127, 255, 212, 0.107) 0px -79px 40px 0px inset, rgba(127, 255, 212, 0.06) 0px 2px 1px, rgba(127, 255, 212, 0.09) 0px 4px 2px, rgba(127, 255, 212, 0.09) 0px 8px 4px, rgba(127, 255, 212, 0.09) 0px 16px 8px, rgba(127, 255, 212, 0.09) 0px 32px 16px;
+}
+.front-element::before {
+  content: "";
   position: absolute;
-  font-size: 4rem;
-  filter: blur(0.1rem);
-  display: grid;
-  place-content: center;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  color: rgba(240, 248, 255, 0.31);
-}
-ul > li > a > img {
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  cursor: pointer;
-  list-style: none;
-  border: 1rem solid rgb(183, 183, 183);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(179, 224, 247, 0.4039215686);
+  backdrop-filter: blur(0.03rem);
   border-radius: 0.3rem;
-  height: calc(50vh - 6rem);
-  width: calc(33vw - 6rem);
-  overflow: hidden;
-  transition: 0.3s;
+  transition: 0.5s;
+  z-index: 0;
 }
-ul > li > a > img:hover {
-  border: 1rem solid rgb(240, 240, 240);
-  scale: 1.01;
+.front-element:hover::before {
+  background-color: rgba(179, 224, 247, 0.2431372549);
+  backdrop-filter: blur(0);
+}
+
+.container {
+  transition: 0.3s;
+  border: 2px solid transparent;
+  border-radius: .5rem;
+}
+
+.front-element_header {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  padding: 0.5rem;
+  font-size: 1rem;
+  height: 4rem;
+  width: 95%;
+  top: -1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(39, 81, 67, 0.321);
+  backdrop-filter: blur(0.4rem); 
+  border-radius: 0.3rem;
+  backdrop-filter: blur(0.4rem);
+  text-transform: uppercase;
+  font-family: 'Rubik', sans-serif;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 2rem;
+    width: 90%;
+    background-color: rgba(38, 41, 46, 1);;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-46%) translateX(-50%);
+    text-align: center;
+    text-justify: center;
+    border: 1px solid  rgba(255, 255, 255, 0.2);
+    border-radius: .2rem;
+    z-index: -10;
+  }
 }
 
 footer {
-  position: relative;
-  height: 2rem;
+  height: clamp(3rem, 1vw, 5rem);
+  box-shadow: 0rem 0rem 2rem 1rem rgba(127, 255, 212, 0.167);
+  background-color: #202833;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+  text-transform: uppercase;
+  font-family: 'Protest Revolution', sans-serif;
+  color: rgba(127, 255, 212, 0.725);
 }
-footer > span {
-  position: absolute;
-  right: 4rem;
-  color: rgb(200, 200, 200);
-}/*# sourceMappingURL=main.css.map */
+
+.hovered {
+  background-color: rgb(127, 255, 212);
+  color: #222831;
+}
