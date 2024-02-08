@@ -114,6 +114,10 @@ footer {
 
 
 .Ul {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 0;
   margin-top: 20rem;
   list-style: none;
   display: flex;
