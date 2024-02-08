@@ -9,6 +9,8 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   background-color: #1a1f26;
+  margin: 0;
+  padding: 0;
 }
 
 body,
@@ -31,8 +33,61 @@ body {
   padding: 0;
   color: #EEEEEE;
 }
+#root {
+  position: relative;
+  z-index: 0;
+}
+.background-core-layer {
+  position: relative;
+  background-color: #202833;
+  min-width: 100dvw;
+  display: grid;
+  z-index: 1;
+  grid-template-columns: repeat(10, 1fr);
+  overflow: hidden;
+  gap: .1rem;
+}
+
+.net {
+  height: 5rem;
+  width: calc(10dvw - .1rem);
+  height: calc(10dvh - .1rem);
+  pointer-events: none;
+  background-color: #202833;
+  z-index: 2;
+}
+.light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(127, 255, 212, 0.367) .1%, transparent 20%);
+  z-index: 1;
+}
+
+footer {
+  position: absolute;
+  height: clamp(3rem, 1vw, 5rem);
+  width: 100%;
+  bottom: -0.1rem;
+  box-shadow: 0rem 0rem 2rem 1rem rgba(127, 255, 212, 0.167);
+  background-color: #202833;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+  text-transform: uppercase;
+  font-family: 'Protest Revolution', sans-serif;
+  color: rgba(127, 255, 212, 0.725);
+  z-index: 10;
+}
 
 .header {
+  position: absolute;
+  top: 0;
+  width: 100%;
   padding: 2rem 0 2rem 0;
   text-align: center;
   font-size: clamp(2rem, 5vw, 4rem);
@@ -42,26 +97,29 @@ body {
   color: rgba(127, 255, 212, 0.725);
   background-color: #202833;
   border-bottom: 1px solid #212915;
-  box-shadow: 0rem -1rem 2rem 2rem rgba(127, 255, 212, 0.167);;
+  box-shadow: 0rem -1rem 2rem 2rem rgba(127, 255, 212, 0.167);
+  z-index: 2;
 }
 
 .wrapper {
-  background-color: #1a1f26;
-  min-height: 100dvh;
-  padding-bottom: 1rem;
+  position: absolute;
+  background-color: transparent;
+  display: grid;
+  pointer-events: auto;
+  grid-template-columns: 3fr 1fr;
+  pointer-events: none;
+  inset: 0;
+  z-index: 5;
 }
 
+
 .Ul {
+  margin-top: 20rem;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 8rem;
   display: flex;
+  pointer-events: auto;
   justify-content: center;
   gap: clamp(2rem, 5vw, 4rem);
-  flex-wrap: wrap;
-  height: 100%;
-  width: 100%;
 }
 
 .front-element {
@@ -153,20 +211,7 @@ body {
   font-size: 1.1rem;
 }
 
-footer {
-  height: clamp(3rem, 1vw, 5rem);
-  box-shadow: 0rem 0rem 2rem 1rem rgba(127, 255, 212, 0.167);
-  background-color: #202833;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 1rem;
-  text-transform: uppercase;
-  font-family: 'Protest Revolution', sans-serif;
-  color: rgba(127, 255, 212, 0.725);
+.link {
+  position: absolute;
+  inset: 0;
 }
-
-/* .hovered {
-  background-color: rgb(127, 255, 212);
-  color: #222831;
-} */

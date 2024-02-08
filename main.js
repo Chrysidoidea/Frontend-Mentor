@@ -1,5 +1,8 @@
-const root = document.querySelector("#root");
+"use strict";
 
+const grid = new Array(100).fill(null);
+// const cooore = document.documentElement
+const root = document.querySelector("#root");
 const DATA = {
   NAME: "Frontend Mentor Projects:",
   PROJECTS: [
@@ -12,25 +15,45 @@ const DATA = {
     {
       id: "Space tourism multi-page website",
       name: "Space Tourism",
-      url: "space",
+      url: "https://chrysidoidea.github.io/Space-Tourism/",
       picture: "assets/images/space.png",
     },
     {
       id: "empty",
       name: "empty",
-      url: "create-image-which-represent-this-code-background-dcdcdc-background-image-linear-gradient45d-758775127",
+      url: "#",
       picture:
         "assets/background/create-image-which-represent-this-code-background-dcdcdc-background-image-linear-gradient45d-758775127.png",
     },
   ],
 };
-
 void (function () {
-  const mainWrapper = document.createElement("main");
-  const header = document.createElement("h1");
+  //creating background first layer
+  const backgroundCoreLayer = document.createElement("div");
+  backgroundCoreLayer.className = "background-core-layer";
+  root.appendChild(backgroundCoreLayer);
+  //creating background second layer
+  grid.map((e) => {
+    const gridBackground = document.createElement("net");
+    gridBackground.className = "net";
+    backgroundCoreLayer.appendChild(gridBackground);
+  });
+  //creating light source
+  const light = document.createElement("div");
+  light.className = "light";
+  backgroundCoreLayer.appendChild(light);
+  //bind light source to mousemove
+  backgroundCoreLayer.addEventListener("mousemove", (e) => {
+    backgroundCoreLayer.style.setProperty("--x", e.clientX + "px");
+    backgroundCoreLayer.style.setProperty("--y", e.clientY + "px");
+  });
+
+  //creating header element
+  const header = document.createElement("div");
   header.className = "header";
   header.textContent = DATA.NAME;
 
+  //creating ulElement for our cards
   const ulElement = document.createElement("ul");
   ulElement.className = "Ul";
 
@@ -45,8 +68,7 @@ void (function () {
     });
     liElement.addEventListener("mouseleave", () => {
       liHeader.classList.remove("hovered");
-    })
-
+    });
     container.className = "container";
     container.style.background = `url(${project.picture}) no-repeat`;
     container.style.backgroundSize = "cover";
@@ -57,25 +79,26 @@ void (function () {
     liElement.className = "front-element";
     liHeader.className = "front-element_header";
     liHeader.textContent = project.name;
+
     link.className = "link";
-    link.href = project.url;
+
+    //Create a simple checker that verifies if the URL is empty. If it is not empty, set the link.
+    if (project.url !== "#") {
+      link.setAttribute("href", project.url);
+      link.setAttribute("target", "_blank");
+    }
 
     ulElement.appendChild(liElement);
     liElement.appendChild(container);
     container.appendChild(liHeader);
-    container.appendChild(link);
-
+    liElement.appendChild(link);
   }
 
-  mainWrapper.appendChild(header);
+  //creating last layer wrapper, which will contain cards
+  const mainWrapper = document.createElement("main");
+  mainWrapper.className = "wrapper";
+  backgroundCoreLayer.appendChild(mainWrapper);
   mainWrapper.appendChild(ulElement);
 
-  mainWrapper.className = "wrapper";
-  root.appendChild(mainWrapper);
-
-
-
+  root.appendChild(header);
 })();
-
-// const liElement = document.querySelectorAll(".front-element");
-// const liHeader = document.querySelectorAll(".front-element_header");
