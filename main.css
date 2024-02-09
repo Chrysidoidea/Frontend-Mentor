@@ -247,3 +247,8 @@ footer {
   text-shadow: 1px 1px 15px rgb(85, 242, 187);
   font-size: 1.1rem;
 }
+
+.link {
+  position: absolute;
+  inset: 0;
+}
