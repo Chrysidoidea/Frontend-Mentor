@@ -65,7 +65,8 @@ body {
   pointer-events: none;
   background: radial-gradient(
     circle at var(--x, 50%) var(--y, 50%),
-    rgba(127, 255, 212, 0.767) -10%,
+    rgba(127, 255, 212, 0.267) 12%,
+    rgba(127, 255, 212, 1) 5%,
     transparent 14%
   );
   z-index: 1;
@@ -147,7 +148,6 @@ footer {
   height: 11.25rem;
   width: 20rem;
   background-color: #454b55;
-  /* background-color: red; */
   box-shadow: black 0px 5px 15px;
   display: flex;
   justify-content: center;
@@ -160,7 +160,6 @@ footer {
   @media (min-width: 1440px) {
     height: clamp(11.25rem, 25vh, 25rem);
     width: clamp(20rem, 25vw, 35.556rem);
-    
   }
 }
 .front-element:hover {
@@ -248,8 +247,3 @@ footer {
   text-shadow: 1px 1px 15px rgb(85, 242, 187);
   font-size: 1.1rem;
 }
-
-/* .link {
-  position: absolute;
-  inset: 0;
-} */
