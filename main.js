@@ -56,7 +56,7 @@ void (function () {
   //creating ulElement for our cards
   const ulElement = document.createElement("ul");
   ulElement.className = "Ul";
-
+//cards created through loop, we use DATA.PROJECTS as a source
   for (const [_, project] of Object.entries(DATA.PROJECTS)) {
     const liElement = document.createElement("li");
     const liHeader = document.createElement("h2");
