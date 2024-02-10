@@ -24,7 +24,7 @@ const DATA = {
       name: "empty",
       url: "#",
       picture:
-        "assets/background/create-image-which-represent-this-code-background-dcdcdc-background-image-linear-gradient45d-758775127.png",
+        "assets/background/empty_house.png",
     },
   ],
 };
