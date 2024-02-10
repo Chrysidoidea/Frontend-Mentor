@@ -185,11 +185,13 @@ footer {
   height: 100%;
   background-color: transparent;
   backdrop-filter: blur(0.03rem);
+  -webkit-backdrop-filter: blur(0.03rem);
   border-radius: 0.3rem;
   transition: 0.5s;
   z-index: 0;
-
-  @media (min-width: 1440px) {
+}
+@media (min-width: 1440px) {
+  .front-element::before {
     background-color: rgba(179, 224, 247, 0.2039215686);
   }
 }
@@ -242,7 +244,7 @@ footer {
 }
 
 .hovered {
-  background-color: rgba(71, 144, 119, 0.821);
+  background-color: rgba(85, 206, 164, 0.521);
   color: rgb(85, 242, 187);
   text-shadow: 1px 1px 15px rgb(85, 242, 187);
   font-size: 1.1rem;

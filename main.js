@@ -1,5 +1,6 @@
 "use strict";
 
+
 const grid = new Array(100).fill(null);
 // const cooore = document.documentElement
 const root = document.querySelector("#root");
