@@ -1,6 +1,5 @@
 "use strict";
 
-
 const grid = new Array(100).fill(null);
 // const cooore = document.documentElement
 const root = document.querySelector("#root");
@@ -23,11 +22,12 @@ const DATA = {
       id: "empty",
       name: "empty",
       url: "#",
-      picture:
-        "assets/background/empty_house.png",
+      picture: "assets/background/empty_house.png",
     },
   ],
 };
+//creating image object
+
 void (function () {
   //creating background first layer
   const backgroundCoreLayer = document.createElement("div");
@@ -57,7 +57,7 @@ void (function () {
   //creating ulElement for our cards
   const ulElement = document.createElement("ul");
   ulElement.className = "Ul";
-//cards created through loop, we use DATA.PROJECTS as a source
+  //cards created through loop, we use DATA.PROJECTS as a source
   for (const [_, project] of Object.entries(DATA.PROJECTS)) {
     const liElement = document.createElement("li");
     const liHeader = document.createElement("h2");
@@ -71,11 +71,20 @@ void (function () {
       liHeader.classList.remove("hovered");
     });
     container.className = "container";
-    container.style.background = `url(${project.picture}) no-repeat`;
-    container.style.backgroundSize = "cover";
-    container.style.backgroundPosition = "center";
-    container.style.height = "100%";
-    container.style.width = "100%";
+
+    //catch the image
+    const image = new Image();
+    image.src = project.picture;
+    //set initial background color
+    container.style.background = "#000000E3";
+    //set listener, we waiting untill picture loaded before setting it on a background
+    image.addEventListener("load", () => {
+      container.style.background = `url(${project.picture}) no-repeat`;
+      container.style.backgroundSize = "cover";
+      container.style.backgroundPosition = "center";
+      container.style.height = "100%";
+      container.style.width = "100%";
+    });
 
     liElement.className = "front-element";
     liHeader.className = "front-element_header";
