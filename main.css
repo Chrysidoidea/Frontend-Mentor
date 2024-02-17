@@ -116,6 +116,7 @@ footer {
   inset: 0;
   z-index: 5;
   overflow: scroll;
+
 }
 
 .Ul {
@@ -166,6 +167,10 @@ footer {
   box-shadow: rgba(127, 255, 212, 0.377) 0px 8px 19px;
   background-color: rgba(127, 255, 212, 0.809);
 }
+.empty:hover {
+  box-shadow: rgba(231, 51, 114, 0.375) 0px 8px 19px;
+  background-color: rgba(231, 51, 114, 0.875);
+}
 .front-element:hover .container {
   border: 2px solid rgba(127, 255, 212, 0.725);
   box-shadow: rgba(127, 255, 212, 0.107) 0px -23px 25px 0px inset,
@@ -175,6 +180,16 @@ footer {
     rgba(127, 255, 212, 0.09) 0px 8px 4px,
     rgba(127, 255, 212, 0.09) 0px 16px 8px,
     rgba(127, 255, 212, 0.09) 0px 32px 16px;
+}
+.empty:hover .container {
+  border: 2px solid rgba(231, 51, 114, 0.775);
+  box-shadow: rgba(231, 51, 114, 0.175) 0px -23px 25px 0px inset,
+  rgba(231, 51, 114, 0.15) 0px -36px 30px 0px inset,
+  rgba(231, 51, 114, 0.107) 0px -79px 40px 0px inset,
+  rgba(231, 51, 114, 0.06) 0px 2px 1px, rgba(231, 51, 114, 0.06) 0px 4px 2px,
+  rgba(231, 51, 114, 0.09) 0px 8px 4px,
+  rgba(231, 51, 114, 0.09) 0px 16px 8px,
+  rgba(231, 51, 114, 0.09) 0px 32px 16px;
 }
 .front-element::before {
   content: "";
@@ -194,11 +209,20 @@ footer {
   .front-element::before {
     background-color: rgba(179, 224, 247, 0.2039215686);
   }
+  .empty::before {
+    background-color: rgba(231, 51, 114, 0.075);
+  }
 }
 
 .front-element:hover::before {
   background-color: rgba(179, 224, 247, 0.0431372549);
   backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+}
+.empty:hover::before {
+  background-color: rgba(231, 51, 114, 0.0931372549);
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
 }
 
 .container {
@@ -220,8 +244,8 @@ footer {
   transform: translateX(-50%);
   background-color: rgba(39, 81, 67, 0.321);
   backdrop-filter: blur(0.4rem);
+  -webkit-backdrop-filter: blur(0.4rem);
   border-radius: 0.3rem;
-  backdrop-filter: blur(0.4rem);
   text-transform: uppercase;
   font-family: "Rubik", sans-serif;
   transition: 0.5s ease-in-out;
@@ -247,6 +271,13 @@ footer {
   background-color: rgba(85, 206, 164, 0.521);
   color: rgb(85, 242, 187);
   text-shadow: 1px 1px 15px rgb(85, 242, 187);
+  font-size: 1.1rem;
+}
+
+.hovered.beforeEmpty {
+  background-color: rgba(206, 85, 148, 0.521);
+  color: rgb(242, 85, 221);
+  text-shadow: 1px 1px 15px rgb(242, 85, 213);
   font-size: 1.1rem;
 }
 

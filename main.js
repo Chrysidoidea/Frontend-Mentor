@@ -90,6 +90,11 @@ void (function () {
     liHeader.className = "front-element_header";
     liHeader.textContent = project.name;
 
+    if (project.id === "empty") {
+      liElement.classList.add("empty");
+      liHeader.classList.add("beforeEmpty");
+    }
+
     link.className = "link";
 
     //Create a simple checker that verifies if the URL is empty. If it is not empty, set the link.
